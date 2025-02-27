@@ -1,0 +1,106 @@
+/* Error styling */
+.error-container {
+    background-color: #f8d7da;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: center;
+    color: #721c24;
+  }
+  
+  .error-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .error-message {
+    font-size: 16px;
+    color: #721c24;
+  }
+  
+  /* Card container */
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Card styling */
+  .example-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    background-color: black;
+  }
+  
+  .example-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .flight-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .flight-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: whitesmoke;
+  }
+  
+  .flight-scheduled, .flight-info {
+    font-size: 16px;
+    color: whitesmoke;
+  }
+  
+  .flight-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+  }
+  
+  .details-btn, .book-btn {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .details-btn {
+    color: #007bff;
+  }
+  
+  .book-btn {
+    color: #28a745;
+  }
+  
+  /* Loading container */
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+  
+  .loading-text {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  .spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

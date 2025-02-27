@@ -1,0 +1,27 @@
+/* Style for the logo and toolbar */
+mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .spacer {
+    flex: 1; /* This will push the links to the right */
+  }
+  
+  .toolbar-links a {
+    margin-left: 15px;  /* Spacing between links */
+    font-size: 16px;
+  }
+  
+  .toolbar-links a:hover {
+    text-decoration: underline;
+    color: #bbdefb; /* Light blue color on hover */
+  }

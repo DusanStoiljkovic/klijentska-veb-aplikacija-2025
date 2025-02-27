@@ -1,13 +1,34 @@
-<div *ngIf="error">
-    <h3>Oops, an error occured!</h3>
-    <p style="color: red;">{{error}}</p>
-</div>
-
-<div *ngIf="flights">
-    <p *ngFor="let flight of flights">{{flight.id}} {{flight.destination}} {{flight.flightKey}}</p>
-    <pre>{{flights | json}}</pre>
-</div>
-
-<div *ngIf="!flights && !error">
-    <p>podaci se ucitavaju</p>
-</div>
+<!-- Error message -->
+<div *ngIf="error" class="error-container">
+    <h3 class="error-header">Oops, an error occurred!</h3>
+    <p class="error-message">{{error}}</p>
+  </div>
+  
+  <!-- Flights list -->
+  <div *ngIf="flights">
+    <div class="container">
+      <mat-card class="example-card" appearance="outlined" *ngFor="let flight of flights">
+        <img mat-card-image [src]="imageURL(flight.destination)" alt="Flight image" class="flight-image">
+        <mat-card-content>
+          <h1 class="flight-title">Scheduled at: {{flight.destination}}</h1>
+          <p class="flight-scheduled">{{formatDate(flight.scheduledAt)}}</p>
+          <p class="flight-info">Flight number: {{ flight.flightNumber }}</p>
+          <p class="flight-info">Plane model: {{ flight.plane }}</p>
+        </mat-card-content>
+        <mat-card-actions class="flight-actions">
+          <button mat-button class="details-btn">
+            <i class="fa-solid fa-circle-info"></i> Details
+          </button>
+          <button mat-button class="book-btn">
+            <i class="fa-solid fa-cart-shopping"></i> Book now
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  
+  <!-- Loading state -->
+  <div *ngIf="!flights && !error" class="loading-container">
+    <p class="loading-text">Podaci se učitavaju...</p>
+    <div class="spinner"></div>
+  </div>
