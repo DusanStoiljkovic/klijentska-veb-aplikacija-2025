@@ -7,14 +7,14 @@ import {
   coerceNumberProperty,
   getRtlScrollAxisType,
   supportsScrollBehavior
-} from "./chunk-GPQKXSIY.js";
+} from "./chunk-5L2N5MNY.js";
 import {
   BidiModule,
   Directionality
-} from "./chunk-MAZ2JQWW.js";
+} from "./chunk-AP3WAQFS.js";
 import {
   DOCUMENT
-} from "./chunk-UEPI2C34.js";
+} from "./chunk-FUIN7SLW.js";
 import {
   BehaviorSubject,
   ChangeDetectionStrategy,
@@ -95,8 +95,7 @@ import {
   ɵɵtext,
   ɵɵtextInterpolate1,
   ɵɵviewQuery
-} from "./chunk-SE4MNHKL.js";
-import "./chunk-HM5YLMWO.js";
+} from "./chunk-6CU3SITV.js";
 import "./chunk-4ULMLRGT.js";
 
 // node_modules/@angular/cdk/fesm2022/collections.mjs

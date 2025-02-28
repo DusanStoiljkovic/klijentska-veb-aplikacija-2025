@@ -28,7 +28,4 @@
   </div>
   
   <!-- Loading state -->
-  <div *ngIf="!flights && !error" class="loading-container">
-    <p class="loading-text">Podaci se učitavaju...</p>
-    <div class="spinner"></div>
-  </div>
+  <app-loading *ngIf="!flights"/>  

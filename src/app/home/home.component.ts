@@ -2,14 +2,15 @@ import { Component } from '@angular/core';
 import { FlightService } from '../../services/flight.service';
 import { JsonPipe, NgFor, NgIf } from '@angular/common';
 import { AxiosError } from 'axios';
-import { FlightModel } from '../../models/flight.model';
-import {MatCardModule} from '@angular/material/card';
+import { FlightModel } from '../models/flight.model';
+import { MatCardModule } from '@angular/material/card';
 import { UtilsService } from '../utils.service';
+import { LoadingComponent } from '../loading/loading.component';
 
 
 @Component({
   selector: 'app-home',
-  imports: [JsonPipe, NgIf, NgFor, MatCardModule],
+  imports: [JsonPipe, NgIf, NgFor, MatCardModule, LoadingComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
