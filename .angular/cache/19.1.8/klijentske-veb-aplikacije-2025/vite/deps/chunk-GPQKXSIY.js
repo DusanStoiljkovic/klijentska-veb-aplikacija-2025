@@ -1,10 +1,10 @@
 import {
   BidiModule
-} from "./chunk-HUT7XHN4.js";
+} from "./chunk-MAZ2JQWW.js";
 import {
   DOCUMENT,
   isPlatformBrowser
-} from "./chunk-CXXE42LC.js";
+} from "./chunk-UEPI2C34.js";
 import {
   ANIMATION_MODULE_TYPE,
   APP_ID,
@@ -79,7 +79,7 @@ import {
   ɵɵtext,
   ɵɵtextInterpolate1,
   ɵɵviewQuery
-} from "./chunk-H4UQ22OY.js";
+} from "./chunk-SE4MNHKL.js";
 import {
   __spreadProps,
   __spreadValues
@@ -182,6 +182,55 @@ var RtlScrollAxisType;
   RtlScrollAxisType2[RtlScrollAxisType2["NEGATED"] = 1] = "NEGATED";
   RtlScrollAxisType2[RtlScrollAxisType2["INVERTED"] = 2] = "INVERTED";
 })(RtlScrollAxisType || (RtlScrollAxisType = {}));
+var rtlScrollAxisType;
+var scrollBehaviorSupported;
+function supportsScrollBehavior() {
+  if (scrollBehaviorSupported == null) {
+    if (typeof document !== "object" || !document || typeof Element !== "function" || !Element) {
+      scrollBehaviorSupported = false;
+      return scrollBehaviorSupported;
+    }
+    if ("scrollBehavior" in document.documentElement.style) {
+      scrollBehaviorSupported = true;
+    } else {
+      const scrollToFunction = Element.prototype.scrollTo;
+      if (scrollToFunction) {
+        scrollBehaviorSupported = !/\{\s*\[native code\]\s*\}/.test(scrollToFunction.toString());
+      } else {
+        scrollBehaviorSupported = false;
+      }
+    }
+  }
+  return scrollBehaviorSupported;
+}
+function getRtlScrollAxisType() {
+  if (typeof document !== "object" || !document) {
+    return RtlScrollAxisType.NORMAL;
+  }
+  if (rtlScrollAxisType == null) {
+    const scrollContainer = document.createElement("div");
+    const containerStyle = scrollContainer.style;
+    scrollContainer.dir = "rtl";
+    containerStyle.width = "1px";
+    containerStyle.overflow = "auto";
+    containerStyle.visibility = "hidden";
+    containerStyle.pointerEvents = "none";
+    containerStyle.position = "absolute";
+    const content = document.createElement("div");
+    const contentStyle = content.style;
+    contentStyle.width = "2px";
+    contentStyle.height = "1px";
+    scrollContainer.appendChild(content);
+    document.body.appendChild(scrollContainer);
+    rtlScrollAxisType = RtlScrollAxisType.NORMAL;
+    if (scrollContainer.scrollLeft === 0) {
+      scrollContainer.scrollLeft = 1;
+      rtlScrollAxisType = scrollContainer.scrollLeft === 0 ? RtlScrollAxisType.NEGATED : RtlScrollAxisType.INVERTED;
+    }
+    scrollContainer.remove();
+  }
+  return rtlScrollAxisType;
+}
 var shadowDomIsSupported;
 function _supportsShadowDom() {
   if (shadowDomIsSupported == null) {
@@ -293,6 +342,23 @@ var _VisuallyHiddenLoader = class __VisuallyHiddenLoader {
   }], null, null);
 })();
 
+// node_modules/@angular/cdk/fesm2022/coercion.mjs
+function coerceNumberProperty(value, fallbackValue = 0) {
+  if (_isNumberValue(value)) {
+    return Number(value);
+  }
+  return arguments.length === 2 ? fallbackValue : 0;
+}
+function _isNumberValue(value) {
+  return !isNaN(parseFloat(value)) && !isNaN(Number(value));
+}
+function coerceArray(value) {
+  return Array.isArray(value) ? value : [value];
+}
+function coerceElement(elementOrRef) {
+  return elementOrRef instanceof ElementRef ? elementOrRef.nativeElement : elementOrRef;
+}
+
 // node_modules/@angular/cdk/fesm2022/keycodes.mjs
 var ENTER = 13;
 var SHIFT = 16;
@@ -318,23 +384,6 @@ function coerceObservable(data) {
     return of(data);
   }
   return data;
-}
-
-// node_modules/@angular/cdk/fesm2022/coercion.mjs
-function coerceNumberProperty(value, fallbackValue = 0) {
-  if (_isNumberValue(value)) {
-    return Number(value);
-  }
-  return arguments.length === 2 ? fallbackValue : 0;
-}
-function _isNumberValue(value) {
-  return !isNaN(parseFloat(value)) && !isNaN(Number(value));
-}
-function coerceArray(value) {
-  return Array.isArray(value) ? value : [value];
-}
-function coerceElement(elementOrRef) {
-  return elementOrRef instanceof ElementRef ? elementOrRef.nativeElement : elementOrRef;
 }
 
 // node_modules/@angular/cdk/fesm2022/observers.mjs
@@ -4944,11 +4993,17 @@ var _MatInternalFormField = class __MatInternalFormField {
 
 export {
   Platform,
+  RtlScrollAxisType,
+  supportsScrollBehavior,
+  getRtlScrollAxisType,
   _CdkPrivateStyleLoader,
+  coerceNumberProperty,
+  _isNumberValue,
+  coerceElement,
   FocusMonitor,
   MatCommonModule,
   _StructuralStylesLoader,
   MatRippleModule,
   MatRippleLoader
 };
-//# sourceMappingURL=chunk-I326UKLP.js.map
+//# sourceMappingURL=chunk-GPQKXSIY.js.map

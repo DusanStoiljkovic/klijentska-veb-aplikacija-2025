@@ -1,6 +1,6 @@
 import {
   DOCUMENT
-} from "./chunk-CXXE42LC.js";
+} from "./chunk-UEPI2C34.js";
 import {
   ANIMATION_MODULE_TYPE,
   Inject,
@@ -12,7 +12,8 @@ import {
   setClassMetadata,
   ɵɵdefineInjectable,
   ɵɵinject
-} from "./chunk-H4UQ22OY.js";
+} from "./chunk-SE4MNHKL.js";
+import "./chunk-HM5YLMWO.js";
 import {
   __objRest,
   __spreadValues
@@ -4535,4 +4536,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=browser-SZZJJ5QA.js.map
+//# sourceMappingURL=browser-X6N42OX7.js.map

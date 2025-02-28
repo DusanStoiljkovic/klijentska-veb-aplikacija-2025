@@ -10,8 +10,8 @@
       <mat-card class="example-card" appearance="outlined" *ngFor="let flight of flights">
         <img mat-card-image [src]="imageURL(flight.destination)" alt="Flight image" class="flight-image">
         <mat-card-content>
-          <h1 class="flight-title">Scheduled at: {{flight.destination}}</h1>
-          <p class="flight-scheduled">{{formatDate(flight.scheduledAt)}}</p>
+          <h1 class="flight-title">{{flight.destination}}</h1>
+          <p class="flight-scheduled">{{utils.formatDate(flight.scheduledAt)}}</p>
           <p class="flight-info">Flight number: {{ flight.flightNumber }}</p>
           <p class="flight-info">Plane model: {{ flight.plane }}</p>
         </mat-card-content>

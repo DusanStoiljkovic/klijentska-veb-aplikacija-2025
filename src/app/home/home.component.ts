@@ -4,6 +4,7 @@ import { JsonPipe, NgFor, NgIf } from '@angular/common';
 import { AxiosError } from 'axios';
 import { FlightModel } from '../../models/flight.model';
 import {MatCardModule} from '@angular/material/card';
+import { UtilsService } from '../utils.service';
 
 
 @Component({
@@ -12,18 +13,15 @@ import {MatCardModule} from '@angular/material/card';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
+
 export class HomeComponent {
   public flights: FlightModel[] | null = null
   public error: string | null = null
 
-  constructor() {
+  constructor(public utils: UtilsService) {
     FlightService.getFlights()
       .then(rsp => this.flights = rsp.data.content)
       .catch((e: AxiosError) => this.error = `${e.code}: ${e.message}`)
-  }
-
-  public formatDate(iso: string) {
-    return new Date(iso).toLocaleDateString('sr-RS')
   }
 
   public imageURL(destination: string) {
