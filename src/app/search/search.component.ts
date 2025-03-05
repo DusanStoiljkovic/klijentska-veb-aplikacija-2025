@@ -4,10 +4,11 @@ import { FlightService } from '../../services/flight.service';
 import { FlightModel } from '../models/flight.model'
 import { NgIf } from '@angular/common';
 import { UtilsService } from '../utils.service';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-search',
-  imports: [MatTableModule, NgIf],
+  imports: [MatTableModule, NgIf, MatButtonModule],
   templateUrl: './search.component.html',
   styleUrl: './search.component.css',
   providers: [UtilsService]

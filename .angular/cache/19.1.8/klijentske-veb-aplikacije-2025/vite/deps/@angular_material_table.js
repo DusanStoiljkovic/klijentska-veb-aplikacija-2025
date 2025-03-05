@@ -1,5 +1,11 @@
 import {
-  MatCommonModule,
+  MatCommonModule
+} from "./chunk-4YLSIGDO.js";
+import {
+  BidiModule,
+  Directionality
+} from "./chunk-7THJPEFG.js";
+import {
   Platform,
   RtlScrollAxisType,
   _isNumberValue,
@@ -7,14 +13,10 @@ import {
   coerceNumberProperty,
   getRtlScrollAxisType,
   supportsScrollBehavior
-} from "./chunk-5L2N5MNY.js";
-import {
-  BidiModule,
-  Directionality
-} from "./chunk-AP3WAQFS.js";
+} from "./chunk-3MN5ZX2J.js";
 import {
   DOCUMENT
-} from "./chunk-FUIN7SLW.js";
+} from "./chunk-3KWUCGPJ.js";
 import {
   BehaviorSubject,
   ChangeDetectionStrategy,
@@ -95,7 +97,7 @@ import {
   ɵɵtext,
   ɵɵtextInterpolate1,
   ɵɵviewQuery
-} from "./chunk-6CU3SITV.js";
+} from "./chunk-CMB3RQKQ.js";
 import "./chunk-4ULMLRGT.js";
 
 // node_modules/@angular/cdk/fesm2022/collections.mjs
