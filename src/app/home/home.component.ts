@@ -7,11 +7,12 @@ import { MatCardModule } from '@angular/material/card';
 import { UtilsService } from '../utils.service';
 import { LoadingComponent } from '../loading/loading.component';
 import { MatButtonModule } from '@angular/material/button';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-home',
-  imports: [JsonPipe, NgIf, NgFor, MatCardModule, LoadingComponent, MatButtonModule],
+  imports: [JsonPipe, NgIf, NgFor, MatCardModule, LoadingComponent, MatButtonModule, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

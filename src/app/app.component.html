@@ -8,7 +8,7 @@
       <a routerLink="/about" mat-button>About</a>
       <a routerLink="/login" mat-button *ngIf="!service.getActiveUser()">Login</a>
       <a routerLink="/login" mat-button *ngIf="service.getActiveUser()" (click)="doLogout()">Logout</a>
-      <a routerLink="/user" mat-button>Profile</a>
+      <a routerLink="/user" mat-button *ngIf="service.getActiveUser()">Profile</a>
     </div>
   </mat-toolbar>
   

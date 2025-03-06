@@ -16,9 +16,9 @@
           <p class="flight-info">Plane model: {{ flight.plane }}</p>
         </mat-card-content>
         <mat-card-actions class="flight-actions">
-          <button mat-button class="details-btn">
+          <a mat-button class="details-btn" [routerLink]="['/details/', flight.id]">
             <i class="fa-solid fa-circle-info"></i> Details
-          </button>
+          </a>
           <button mat-button class="book-btn">
             <i class="fa-solid fa-cart-shopping"></i> Book now
           </button>

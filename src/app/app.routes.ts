@@ -5,6 +5,8 @@ import { SearchComponent } from './search/search.component';
 import { AirlinesComponent } from './airlines/airlines.component';
 import { AuthComponent } from './auth/auth.component';
 import { UserComponent } from './user/user.component';
+import { DetailsComponent } from './details/details.component';
+import { OrderComponent } from './order/order.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -13,5 +15,7 @@ export const routes: Routes = [
     { path: 'airlines', component: AirlinesComponent},
     { path: 'login', component: AuthComponent},
     { path: 'user', component: UserComponent},
+    { path: 'details/:id', component: DetailsComponent},
+    { path: 'details/:id/order', component: OrderComponent},
     { path: '**', redirectTo: '' }
 ]
