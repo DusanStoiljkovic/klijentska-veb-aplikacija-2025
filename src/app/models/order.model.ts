@@ -1,4 +1,5 @@
 export interface OrderModel {
+    id: number
     flightId: number
     flightNumber: string
     airline: string

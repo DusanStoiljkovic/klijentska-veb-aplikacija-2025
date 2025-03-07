@@ -1,0 +1,35 @@
+/* Glavni kontejner */
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    padding: 20px;
+  }
+  
+  /* Mat-Card stil */
+  mat-card {
+    background-color: #1e1e1e; /* Tamna pozadina */
+    color: #e0e0e0; /* Svetliji tekst */
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Linkovi */
+  a {
+    color: #00bcd4;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Stil za FontAwesome ikone */
+  .fa-icon {
+    margin-right: 10px;
+    color: #00bcd4;
+  }
