@@ -4,10 +4,11 @@ import { JsonPipe, NgFor, NgIf } from '@angular/common';
 import { AxiosError } from 'axios';
 import { FlightModel } from '../models/flight.model';
 import { MatCardModule } from '@angular/material/card';
-import { UtilsService } from '../utils.service';
+import { UtilsService } from '../../services/utils.service';
 import { LoadingComponent } from '../loading/loading.component';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
+import { UserService } from '../../services/user.service';
 
 
 @Component({
@@ -20,15 +21,11 @@ import { RouterLink } from '@angular/router';
 export class HomeComponent {
   public flights: FlightModel[] | null = null
   public error: string | null = null
+  public user = UserService.getActiveUser()
 
   constructor(public utils: UtilsService) {
     FlightService.getFlights()
       .then(rsp => this.flights = rsp.data.content)
       .catch((e: AxiosError) => this.error = `${e.code}: ${e.message}`)
   }
-
-  public imageURL(destination: string) {
-    return `https://img.pequla.com/destination/${destination.split(' ')[0].toLowerCase()}.jpg`
-  }
-
 }

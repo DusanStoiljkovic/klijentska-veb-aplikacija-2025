@@ -1,18 +1,73 @@
-<div class="wrapper">
-    <button mat-button (click)="doChangePassword()">
-        CHANGE PASSWORD NOW
-    </button>
-
-    <div *ngIf="orders.length == 0">
-        <p>Nema ordera</p>
+<div class="container">
+    <!-- Leva strana: Orders -->
+    <div class="orders-section">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>✈ Flight Orders</mat-card-title>
+        </mat-card-header>
+  
+        <mat-card-content>
+          <div *ngIf="orders.length === 0" class="empty-state">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <p>No orders available</p>
+          </div>
+  
+          <table *ngIf="orders.length > 0" mat-table [dataSource]="orders" class="mat-elevation-z8">
+            <!-- Destination Column -->
+            <ng-container matColumnDef="destination">
+              <th mat-header-cell *matHeaderCellDef> Destination </th>
+              <td mat-cell *matCellDef="let order"> {{ order.destination }} </td>
+            </ng-container>
+  
+            <!-- Flight Number Column -->
+            <ng-container matColumnDef="flightNumber">
+              <th mat-header-cell *matHeaderCellDef> Flight # </th>
+              <td mat-cell *matCellDef="let order"> {{ order.flightNumber }} </td>
+            </ng-container>
+  
+            <!-- Price Column -->
+            <ng-container matColumnDef="price">
+              <th mat-header-cell *matHeaderCellDef> Price </th>
+              <td mat-cell *matCellDef="let order"> ${{ order.pricePerItem }} </td>
+            </ng-container>
+  
+            <!-- Actions Column -->
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef> Actions </th>
+              <td mat-cell *matCellDef="let order">
+                <button mat-raised-button color="primary" >Details</button>
+                <button mat-raised-button color="warn" >Cancel</button>
+              </td>
+            </ng-container>
+  
+            <tr mat-header-row *matHeaderRowDef="['destination', 'flightNumber', 'price', 'actions']"></tr>
+            <tr mat-row *matRowDef="let row; columns: ['destination', 'flightNumber', 'price', 'actions'];"></tr>
+          </table>
+        </mat-card-content>
+      </mat-card>
     </div>
-
-    <div *ngIf="orders.length > 0">
-        <h3>Spisak Ordera</h3>
-        <ul>
-            <li *ngFor="let order of orders">
-                {{order.destination}} {{order.flightNumber}} {{order.pricePerItem}} {{order.flightId}}
-            </li>
-        </ul>
+  
+    <!-- Desna strana: Change Password -->
+    <div class="password-section">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>🔒 Change Password</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-form-field appearance="outline" class="full-width">
+            New Password: <br>
+            <input matInput type="password" [(ngModel)]="newPassword">
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" class="full-width">
+            Confirm Password: <br>
+            <input matInput type="password" [(ngModel)]="confirmPassword">
+          </mat-form-field>
+  
+          <button mat-raised-button color="accent" class="full-width" (click)="doChangePassword()">
+            Submit   <i class="fa-solid fa-key"></i>
+          </button>
+        </mat-card-content>
+      </mat-card>
     </div>
-</div>
+  </div>

@@ -1,0 +1,77 @@
+/* General Styles */
+body {
+    background-color: #121212; /* Tamna pozadina */
+    color: #e0e0e0; /* Svetlo siva boja slova */
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Orders Section */
+  .orders-section {
+    flex: 2;
+  }
+  
+  .password-section {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  /* Mat-Card Styling */
+  mat-card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+  }
+  
+  mat-card-title {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #f8f8f8;
+  }
+  
+  /* Empty State */
+  .empty-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    color: #ff5252;
+  }
+  
+  /* Table Styling */
+  table {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  th {
+    background-color: #333;
+    color: #ffffff;
+    padding: 10px;
+  }
+  
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+  }
+  
+  button {
+    margin-right: 8px;
+  }
+  
+  /* Password Section */
+  .full-width {
+    width: 100%;
+    margin-bottom: 10px;
+  }

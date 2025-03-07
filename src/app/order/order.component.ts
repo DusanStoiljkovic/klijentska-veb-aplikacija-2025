@@ -4,14 +4,15 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FlightModel } from '../models/flight.model';
-import { UtilsService } from '../utils.service';
+import { UtilsService } from '../../services/utils.service';
 import { AirLineModel } from '../models/airline.model';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FlightService } from '../../services/flight.service';
 import { AirLineService } from '../../services/airline.service';
 import { UserService } from '../../services/user.service';
+import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-order',
@@ -25,8 +26,9 @@ export class OrderComponent {
   public selectedAirLine: AirLineModel | null = this.airlines[0]
   public selectedTicketCount: number = 1
   public selectedPrice: number = 150
-  
-  constructor(private route: ActivatedRoute, public utils: UtilsService) {
+
+
+  constructor(private route: ActivatedRoute, public utils: UtilsService, private router: Router) {
     route.params.subscribe(params => {
       FlightService.getFlightById(params['id'])
       .then(rsp => {
@@ -46,5 +48,7 @@ export class OrderComponent {
       status: 'ordered',
       rating: null
     })
+
+    result ? this.router.navigate(['/user']) : alert("An error occurred while creating the order")
   }
 }

@@ -3,7 +3,7 @@ import { MatTableModule } from '@angular/material/table';
 import { FlightService } from '../../services/flight.service';
 import { FlightModel } from '../models/flight.model'
 import { NgIf } from '@angular/common';
-import { UtilsService } from '../utils.service';
+import { UtilsService } from '../../services/utils.service';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({

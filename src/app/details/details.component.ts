@@ -5,7 +5,7 @@ import { FlightModel } from '../models/flight.model';
 import { FlightService } from '../../services/flight.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgIf } from '@angular/common';
-import { UtilsService } from '../utils.service';
+import { UtilsService } from '../../services/utils.service';
 import { MatListModule } from '@angular/material/list';
 import { SafePipe } from './safe.pipe';
 

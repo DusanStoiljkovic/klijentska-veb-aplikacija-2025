@@ -1,6 +1,6 @@
 <div *ngIf="flight">
     <mat-card class="order-card" appearance="outlined">
-        <img mat-card-image [src]="" [alt]="">
+        <img mat-card-image [src]="utils.generateDestinationImage(flight.destination)" [alt]="">
         <mat-card-content>
             <h3>New Order - {{ flight.destination }}</h3>
             <mat-form-field class="full-width">
