@@ -27,6 +27,16 @@ export class UserService {
         return false
     }
 
+    static signUp(user: UserModel): boolean {
+        if(user.name != '' && user.email != '' && user.password != '') {
+            let users = this.retrieveUsers()
+            users.push(user)
+            localStorage.setItem('users', JSON.stringify(users))
+            return true
+        }
+        return false
+    }
+
     static getActiveUser(): UserModel | null {
         if(!localStorage.getItem('active'))
             return null

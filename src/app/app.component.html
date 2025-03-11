@@ -1,5 +1,10 @@
 <mat-toolbar color="primary">
-    <a href="/" style="text-decoration: none;"><span class="logo"><i class="fa-solid fa-location-dot"></i>   iTravel</span></a>
+    <a href="/" style="text-decoration: none;">
+      <span class="logo"><i class="fa-solid fa-location-dot"></i>   
+        iTravel
+      </span>
+    </a>
+    
     <span class="spacer"></span>
     <div class="toolbar-links">
       <a routerLink="/" mat-button>Home</a>
@@ -9,6 +14,7 @@
       <a routerLink="/login" mat-button *ngIf="!service.getActiveUser()">Login</a>
       <a routerLink="/login" mat-button *ngIf="service.getActiveUser()" (click)="doLogout()">Logout</a>
       <a routerLink="/user" mat-button *ngIf="service.getActiveUser()">Profile</a>
+      <a routerLink="/signup" mat-button *ngIf="!service.getActiveUser()">Sign Up</a>
     </div>
   </mat-toolbar>
   
